@@ -16,6 +16,8 @@ namespace Microsoft.Samples.Kinect.BodyBasics
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using Microsoft.Kinect;
+    using System.IO.Ports;
+    using System.Linq;
 
     /// <summary>
     /// Interaction logic for MainWindow
@@ -70,7 +72,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
         /// <summary>
         /// Pen used for drawing bones that are currently inferred
         /// </summary>        
-        private readonly Pen inferredBonePen = new Pen(Brushes.Gray, 1);
+        private readonly Pen inferredBonePen = new Pen(Brushes.Gray, 1.0);
 
         /// <summary>
         /// Drawing group for body rendering output
@@ -132,6 +134,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
         /// </summary>
         public MainWindow()
         {
+
             // one sensor is currently supported
             this.kinectSensor = KinectSensor.GetDefault();
 
@@ -216,6 +219,65 @@ namespace Microsoft.Samples.Kinect.BodyBasics
 
             // initialize the components (controls) of the window
             this.InitializeComponent();
+
+            //Joint joint;
+
+            //joint = new Joint();
+
+
+
+            initStatus(); //initialize COM port and update the status in the text box.
+        }
+
+        public void initStatus()
+        {
+            Init init;
+
+            SerialPort arduino;
+
+            string StatusTXT;
+
+            arduino = new SerialPort();
+            arduino.PortName = "COM3";
+            arduino.BaudRate = 9600;
+
+            init = new Init(arduino, this, "Hi status");
+
+            this.textBlock.Text = init.initArd();
+        }
+
+       
+
+        public void kinectIN()
+        {
+            using (DrawingContext dc = this.drawingGroup.Open())
+            {
+                // Draw a transparent background to set the render size
+
+                foreach (Body body in this.bodies)
+                {
+
+
+                    if (body.IsTracked)
+                    {
+
+
+                        IReadOnlyDictionary<JointType, Joint> joints = body.Joints;
+
+                        // convert the joint points to depth (display) space
+                        Dictionary<JointType, Point> jointPoints = new Dictionary<JointType, Point>();
+
+                        foreach (JointType jointType in joints.Keys)
+                        {
+                            // sometimes the depth(Z) of an inferred joint may show as negative
+                            // clamp down to 0.1f to prevent coordinatemapper from returning (-Infinity, -Infinity)
+                            CameraSpacePoint position = joints[jointType].Position;
+
+                        }
+
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -512,6 +574,18 @@ namespace Microsoft.Samples.Kinect.BodyBasics
             // on failure, set the status text
             this.StatusText = this.kinectSensor.IsAvailable ? Properties.Resources.RunningStatusText
                                                             : Properties.Resources.SensorNotAvailableStatusText;
+        }
+
+        private void textBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Form1 form1;
+            form1 = new Form1();
+            form1.Show();
         }
     }
 }

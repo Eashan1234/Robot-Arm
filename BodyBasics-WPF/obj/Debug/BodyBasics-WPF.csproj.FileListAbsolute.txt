@@ -1,0 +1,15 @@
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\bin\AnyCPU\Debug\BodyBasics-WPF.exe.config
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\bin\AnyCPU\Debug\BodyBasics-WPF.exe
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\bin\AnyCPU\Debug\BodyBasics-WPF.pdb
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\BodyBasics-WPF.csprojAssemblyReference.cache
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\MainWindow.baml
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\MainWindow.g.cs
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\App.g.cs
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\BodyBasics-WPF_MarkupCompile.cache
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\BodyBasics-WPF.g.resources
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\Microsoft.Samples.Kinect.BodyBasics.Properties.Resources.resources
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\BodyBasics-WPF.csproj.GenerateResource.cache
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\BodyBasics-WPF.csproj.CoreCompileInputs.cache
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\BodyBasics-WPF.exe
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\BodyBasics-WPF.pdb
+C:\Data\Robot Arm\Robot-Arm\BodyBasics-WPF\obj\Debug\Microsoft.Samples.Kinect.BodyBasics.Form1.resources
